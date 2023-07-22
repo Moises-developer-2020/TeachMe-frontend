@@ -1,0 +1,164 @@
+<div class="options">
+    <div class="menu">
+        <div class="audio-video option">
+            <div class="box">
+                <span>Audio recorder</span>
+                <span>Video recorder</span>
+                <span>Only read</span>
+            </div>
+        </div>
+        <div class="voice-Option option">
+            <div class="box">
+                <span>Initial voice</span>
+                <span>
+                    <select name="InitialVoice" id="InitialVoice" (change)="selectLanguage($event)">
+                        <option value="0" >Select voice</option>
+                        <option  value="{{i.split('/')[1]}}" *ngFor="let i of arrayVoices.lang">{{i.split('/')[0] }}</option>
+                    </select>
+                </span>
+            </div>
+            <div class="box">
+                <span>Language separation sing</span>
+                <span>
+                    <select name="separationSing" id="separationSing" (change)="getSeparationSing($event)" >
+                        <option value="=">=</option>
+                        <option value="/">/</option>
+                        <option value="-">-</option>
+                    </select>
+                </span>
+            </div>
+            <div class="box">
+                <span>End voice</span>
+                <span>
+                    <select name="endVoice" id="endVoice" (change)="selectLanguage($event)">
+                        <option value="0" >Select voice</option>
+                        <option value="{{i.split('/')[1]}}" *ngFor="let i of arrayVoices.lang">{{i.split('/')[0]}}</option>                    </select>
+                </span>
+            </div>
+        </div>
+        <div class="read-option option">
+            <div class="box">
+                <span>Initial voice sound</span>
+                <span>
+                    <select name="initialSound" id="initialSound" (change)="selectVoice($event)">
+                        <option value="0" >Select voice</option>
+                        <option  value="{{i}}" *ngFor="let i of soundVoices.initial">{{i}}</option>
+                    </select>
+                </span>
+                <span class="example-of-sound-one">Example of sound one</span>
+            </div>
+            <div class="box">
+                <span>End voice sound</span>
+                <span>
+                    <select name="endSound" id="endSound" (change)="selectVoice($event)"> 
+                        <option value="0" >Select voice</option>
+                        <option value="{{i}}" *ngFor="let i of soundVoices.end">{{i}}</option>
+                    </select>
+                </span>
+                <span class="example-of-sound-two">Example of sound two</span>
+            </div>
+        </div>
+        <div class="speak-option option">
+            <div class="box">
+                <div>Number of repetitions per row</div>
+                <span (click)="repeatVoice(1)">1</span>
+                <span (click)="repeatVoice(2)">2</span>
+                <span (click)="repeatVoice(3)">3</span>
+                <span (click)="repeatVoice(4)">4</span>
+            </div>
+            <div class="box">
+                <span>Speak more softly with each repeat</span>
+                <span><input type="checkbox" name="rate" id="rate"  (change)="rateSpeack($event)"></span>
+            </div>
+        </div>
+        <div class="speak-rate option">
+            <div class="box">
+                <span>Speech rate</span>
+                1 2 3
+                <span>Example</span>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="main-option">
+            <span>order alfabettiest</span>
+        </div>
+        <div class="content-main">
+            <textarea name="text" id="text" cols="30" rows="10" placeholder="one = one&#10;two = two&#10;three = three" [(ngModel)]="text"></textarea>
+        </div>
+        <div class="btn-main">
+            <span>
+                <button (click)="cancelTest(true)"  *ngIf="!this.test">Test</button>
+                <button (click)="cancelTest(false)" *ngIf="this.test" id="btnStopTest">Cancel test</button>
+            </span>
+            <span>
+                <button (click)="mainRecord(true)" *ngIf="!this.test">Begin</button>
+                
+            </span>
+        </div>
+    </div>
+    <div class="main-record  " ><!--*ngIf="this.options.start "-->
+        <div class="record" ></div>
+        <div style="position:absolute;"><span>preview</span><input type="checkbox" name="" id="" (change)="preview($event)"></div>
+        <div class="btn-record">
+            <div class="btn-text-option">
+                <span class="option-text">
+                    <span>Text Size</span>
+                    <input type="range" name="TextSize" id="TextSize" [value]="24" (mousemove)="optionText($event)" (change)="optionText($event)" >
+                </span>
+                <span class="option-text">
+                    <span>Text split</span>
+                    <input type="range" name="TextSplit" [value]="15" (mousemove)="optionText($event)" (change)="optionText($event)">
+                </span>
+                <span class="option-text">
+                    <span>column split</span>
+                    <input type="range" name="columnSplit" [value]="0" (mousemove)="optionText($event)" (change)="optionText($event)">
+                </span>
+                <span class="option-text">
+                    <span>number rows by screen</span>
+                    <input type="number" name="rowNumber" [value]="7" (change)="optionText($event)">
+                </span>
+            </div>
+            <div class="recordStyle">
+                <span>
+                    <input type="file" class="imgFile" (change)="PreviewImg($event,'ImgBackground')">
+                    <input type="button" value="size" (click)="imgSize()">
+                </span>
+                <span>
+                    <span>Row color</span>
+                    <input type="color" name="rowColor" id="" list autocomplete (change)="colorWords($event,4)">
+                </span>
+                <span>
+                    <span >border color</span>
+                    <input type="color" name="borderColor" id="" list autocomplete (change)="colorWords($event,3)">
+                </span>
+                <span>
+                    <span>Not color</span>
+                    <input type="checkbox" name="" id="" (change)="colorWords($event,2)">
+                </span>
+                <span>
+                    <span>Numeration</span>
+                    <input type="checkbox" name="" id="" (change)="colorWords($event,5)">
+                </span>
+                <span>
+                    <span>Right color</span>
+                    <input type="color" name="rightColor" id="" list autocomplete (change)="colorWords($event,0)">
+                </span>
+                <span>
+                    <span >left color</span>
+                    <input type="color" name="leftColor" id="" list autocomplete (change)="colorWords($event,1)">
+                </span>
+                <span>
+                    <span >number color</span>
+                    <input type="color" name="leftColor" id="" list autocomplete (change)="colorWords($event,6)">
+                </span>
+
+            </div>
+            <span>
+                <button (click)="readText()" *ngIf="!this.test">start</button>
+                <button (click)="mainRecord(false)" *ngIf="!this.test">cancel</button>
+            </span>
+        </div>
+        <img id="ImgBackground" alt="background"  style="position:fixed;z-index: -1;" *ngIf="this.options.style.imgBackground" >
+    </div>
+</div>

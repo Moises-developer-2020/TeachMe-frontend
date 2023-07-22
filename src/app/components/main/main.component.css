@@ -1,0 +1,116 @@
+header{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    transition: all .5s ease;
+    padding: 0px 15px;
+    z-index: 10;
+    height: 72px;
+}
+header.fixed{
+    background-color: rgb(232 235 236 / 72%);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    position: fixed;
+    border-bottom: 1px solid rgb(0 0 0 / 4%);
+    text-align: center;
+    text-align: -webkit-center;
+}
+.container{
+    max-width: var(--max-width);
+    height: 100%;
+    
+}
+.row .logo{
+    width: 32px;
+    margin-right: 4px;
+
+}
+.row {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    
+}
+.logo a{
+    position: relative;
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+    font-family: 'Days One', sans-serif;
+    font-size: 21px;
+    color: #1f1f1f;
+    font-weight: 600;
+}
+.logo a img{
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    margin-right: 4px;
+    /*box-shadow: 0px 0px 12px -3px black;*/
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+
+}
+.row .menu{
+
+}
+.menu a{
+    text-decoration: none;
+    color: rgba(117, 117, 117, 1);
+}
+
+.menu ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.menu ul li{
+    margin: 5px;
+    cursor: default;
+    display: inline-block;
+    margin-left: 35px;
+}
+
+section, footer{
+    text-align: center;
+    text-align: -webkit-center;
+}
+section .container, footer .container{
+    position: relative;
+    max-width: var(--max-width);
+    left: 0;
+    right: 0;
+    margin:0 15px 0 15px;
+}
+section.home{
+    cursor: default;
+    min-height: 100vh;
+    background-color:var(--colorFondo);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home .container{
+    background-color: #1f1f1f;
+    width: 100%;
+}
+.home .container img{
+    
+}
+.teach-me{
+    background-color: var(--colorFondoGris);
+}
+.teach-me .container{
+}
+footer{
+    background-color: aquamarine;
+}
+footer .container{
+background-color: blue;
+}

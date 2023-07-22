@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --colorFondo: #F5F5F5;
+    --colorFondoGris: #E8EBEC;
+    --colorCeleste:  #1C89FC;
+    --max-width:1460px;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--colorFondo);
+    
+}
+body.hidde{
+    overflow: hidden;
+}

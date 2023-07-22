@@ -1,0 +1,101 @@
+.options{
+
+}
+.menu div.option{
+    border: 1px solid rgb(0 0 0 / 4%);
+    margin: 0px 2px 2px 0px;
+    display: inline-block;
+}
+.menu div.audio-video{
+    display: block !important;
+}
+.audio-video span{
+    display: inline-block !important;
+    margin: 2px;
+}
+.option .box{
+    display: inline-block;
+}
+.box span{
+    display: block ;
+    cursor: pointer;
+}
+
+
+.main-record{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(0, 0, 0);
+    z-index: 55555;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.main-record.true{
+    display: flex;
+}
+.record{
+    /*background-color: rgba(130, 108, 108, 0.234);*/
+    width: fit-content;
+    width: 100%;
+    max-width: 95vw;
+    /*height: 100%;*/
+    height: fit-content;
+    padding: 5px;
+    font-size: 25px;
+}
+.record .text{
+   
+}
+.text{
+    display: flex;
+    justify-content: space-between;
+}
+.text div{
+}
+.item{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.item-number{
+    padding: 5px;
+    font-size: 3vh;
+    
+}
+.item-word{
+    color: rgb(153 173 255)
+    
+}
+.item-second-word{
+    margin-left: 25px;
+    color: rgb(251 255 164)
+}
+
+.btn-record{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0vh;
+  display: block;
+}
+.btn-text-option{
+    padding: 5px;
+    color: rgb(153 173 255);
+    
+}
+.btn-text-option .option-text{
+    display: inline-block;
+}
+.btn-text-option span{
+    margin: 5px;
+    display: block;
+}
+.recordStyle{
+    color: rgb(153 173 255);
+    
+}
